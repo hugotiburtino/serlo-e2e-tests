@@ -1,0 +1,37 @@
+name: JavaScript
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version: 16.x
+      - run: yarn --immutable --immutable-cache
+      - run: yarn lint:eslint
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version: 16.x
+      - run: yarn --immutable --immutable-cache
+      - run: yarn lint:prettier
+  tsc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version: 16.x
+      - run: yarn --immutable --immutable-cache
+      - run: yarn lint:tsc
