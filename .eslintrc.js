@@ -100,14 +100,7 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: [
-          'packages/server/scripts/**/*',
-          'scripts/**/*',
-          'jest.config.js',
-          'jest.config-pacts-*.js',
-          '__config__/*.ts',
-        ],
-        optionalDependencies: false,
+        devDependencies: true,
       },
     ],
     'import/no-internal-modules': [
