@@ -1,8 +1,9 @@
-const { setWorldConstructor, Before, After, AfterAll } = require('cucumber')
-const { browser } = require('./browser')
-const { exec } = require('child_process')
 const { Configuration, V0alpha2Api } = require('@ory/kratos-client')
+const { exec } = require('child_process')
+const { setWorldConstructor, Before, After, AfterAll } = require('cucumber')
 const { WebElementPromise } = require('selenium-webdriver')
+
+const { browser } = require('./browser')
 
 Before(async function () {
   this.browser = browser

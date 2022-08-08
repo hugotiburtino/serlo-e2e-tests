@@ -1,4 +1,5 @@
 const webdriver = require('selenium-webdriver')
+
 const { Builder } = webdriver
 /**
  * browser should be an abstraction over the driver tool we want to use
